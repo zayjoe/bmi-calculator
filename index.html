@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <section class="calculator">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 p-sm-5 p-4 bmi-wrap">
+                    <div class="row align-items-center justify-content-center mb-3">
+                        <img class="mr-3" src="images/bmi-ico.png" alt="">
+                        <p>BMI တွက်ရန်</p>
+                    </div>
+                    <div class="row">
+                        <div class="col bmi-box p-3 m-3 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bmi-box border-0" id="inputGroup-sizing-lg">အသက်</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                        <div class="col bmi-box p-3 mx-3 my-3 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bmi-box border-0" id="inputGroup-sizing-lg">ကိုယ်အလေးချိန် (ပေါင်)</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="ibm_weight">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col bmi-box p-3 mx-3 mb-3 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bmi-box border-0" id="inputGroup-sizing-lg">အရပ်အမြင့်</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="ibm_height_feet">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bmi-box border-0" id="inputGroup-sizing-lg">ပေ</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="ibm_height_inches">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bmi-box border-0" id="inputGroup-sizing-lg">လက်မ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col input-group">
+                            <input type="submit" value="တွက်ရန်" class="form-control btn bmi-box" aria-label="Large" aria-describedby="inputGroup-sizing-sm" data-target="#bmiModal">
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="bmiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                             <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Your BMI Result <span id="bmi"></span></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                <p id="youbmiResult"></p>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-sm-12 p-sm-5 p-4 preg-wrap">
+                    <div class="row align-items-center mb-3 justify-content-center">
+                        <img class="mr-3" src="images/preg-ico.png" alt="">
+                        <p>ကိုယ်ဝန်ပတ်တွက်ရန်</p>
+                    </div>
+
+                    <div class="row bootstrap-iso">
+                        <div class="col preg-box p-3 m-3">
+                            <p class="mb-2 py-3 clearfix">
+                                နောက်ဆုံးရာသီစက်ဝန်းကို ရိုက်ထည့်၍ သင်၏ ကိုယ်ဝန် အခြေအနေကို စစ်ဆေးနိုင်ပါပြီ။
+                            </p>
+                            <div class="input-group">
+                                <i class="fas fa-calendar-alt form-fa-right"></i>
+                                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col input-group">
+                            <input type="submit" value="တွက်ရန်" class="form-control btn preg-box" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* -- FONT EMBED -- */
+@font-face {
+    font-family: 'Padauk-Regular';
+    src:
+                  url('../fonts/Padauk-Regular.woff')  format('woff'),
+                  url('../fonts/Padauk-Regular.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Padauk-Bold';
+    src:
+                  url('../fonts/Padauk-Bold.woff')  format('woff'),
+                  url('../fonts/Paaduk-Bold.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  html, body,h1,h2,h3,h4,h5,h6,p,a,ol,ul,table,button{
+      font-family: 'Padauk-Regular', Arial, serif !important;
+      line-height: 180%;
+  }
+  /* -- FONT EMBED End -- */
+  .bmi-wrap{
+	background: #F6F0AF;
+}
+.bmi-wrap img, .preg-wrap img{
+	height: 60px;
+}
+.bmi-box{
+	background: #F0E781;
+	border-radius: 7px;
+}
+.bmi-box input[type=text]{
+	border-radius: 7px !important;
+}
+.preg-wrap{
+	background: #FFFAF9;
+}
+.preg-box{
+	background: #EFD4CE;
+	border-radius: 7px;
+}
+.preg-box input[type=text]{
+	border-radius: 7px !important;
+}
