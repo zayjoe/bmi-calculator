@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+    //console.log( "ready!" );
 
     // date picker for pregnancy
     var date_input=$('input[name="date"]'); //our date input has the name "date"
@@ -10,7 +10,76 @@ $( document ).ready(function() {
             todayHighlight: true,
             autoclose: true,
           };
+
           date_input.datepicker(options);
+    $(".preg-wrap input[type='submit']").click(function(){
+        var currentDate = date_input.datepicker('getDate');
+        var currentYear = currentDate.getFullYear();
+        var month = currentDate.getMonth();
+        //Naegele's rule
+        if(month === 0 || month === 1 || month === 2){
+            var byear = currentYear;
+            console.log('delevery year '+ byear);
+        }else {
+            var byear = currentYear + 1;
+            console.log('delevery year '+ byear);
+        }
+        var months = new Array('Jan','Feb','March','April','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+        var past3Month = currentDate.getMonth()-3;
+             if(past3Month < 0){
+
+                 var past3Month = months.length + past3Month;
+                 console.log(months[past3Month]);
+                 var past3Month = months[past3Month];
+
+             }else {
+                console.log(months[past3Month]);
+                var past3Month = months[past3Month];
+             }
+
+
+        var bday = currentDate.getDate() + 7;
+        //months with 31 days
+        if( past3Month === 0 || past3Month === 2 || past3Month === 4 || past3Month === 6 || past3Month === 7 || month === 9 || past3Month === 11){
+            //console.log('31days');
+            if(bday > 31){
+                var bday = bday - 31;
+                console.log(bday);
+            }
+        }else if(past3Month === 3 || past3Month === 5 || past3Month === 8 || past3Month === 10) {
+            //console.log('30 days');
+            if(bday > 30){
+                var bday = bday - 30;
+                console.log(bday);
+            }
+        }else  {
+            function leapYear(year){
+                return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+            }
+            if(leapYear(byear)){
+                //console.log('29days');
+                if(bday > 29){
+                    var bday = bday - 29;
+                    console.log(bday);
+                }
+
+            }else{
+                //console.log('28days');
+                if(bday > 28){
+                    var bday = bday - 28;
+                    console.log(bday);
+                }
+            }
+        }
+        //console.log(bday);
+
+        console.log('Expected delivery Date: '+ bday +'/'+ past3Month + '/' + byear);
+        var deliveryDate = past3Month +'/'+bday+'/'+byear;
+        var deliveryDate = new Date(deliveryDate);
+        console.log(deliveryDate);
+
+    });
+
 
     //bmi data collect and calculate
     $( ".bmi-wrap input[type='submit']" ).click(function() {
